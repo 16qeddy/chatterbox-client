@@ -2,6 +2,10 @@ var MessagesView = {
 
   $chats: $('#chats'),
 
+  renderMessage: function() {
+
+  },
+
   initialize: function() {
   },
 
