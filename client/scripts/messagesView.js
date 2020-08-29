@@ -28,6 +28,10 @@ var MessagesView = {
   },
 
   render: function(messages) {
+    var data = Parse.readAll((dat, fail, failAgain) => {
+      console.log(dat, fail, failAgain);
+    });
+
     // iterate over the messages
     for (let x = 0; x < messages.length; x++) {
       if (messages[x].username !== undefined && messages[x].text !== undefined) {

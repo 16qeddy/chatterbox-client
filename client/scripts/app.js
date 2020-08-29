@@ -24,6 +24,7 @@ var App = {
       console.log('this is data', data.results);
       //theres gotta be a better way to do this.
       MessagesView.render(data.results);
+      console.log(arguments, 'c=======3');
       callback();
     });
   },
