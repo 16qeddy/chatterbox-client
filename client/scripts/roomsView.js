@@ -7,6 +7,10 @@ var RoomsView = {
   },
 
   render: function() {
+  },
+
+  renderRoom: tag => {
+
   }
 
 };

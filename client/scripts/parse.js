@@ -1,7 +1,6 @@
 var Parse = {
 
-  server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`, // CAMPUS to hrr?
-
+  server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`,
   create: function(message, successCB, errorCB = null) {
     // todo: save a message to the server
     $.ajax({
