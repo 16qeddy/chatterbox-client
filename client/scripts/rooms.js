@@ -1,4 +1,4 @@
 var Rooms = {
-
-
+  knownRooms: [],
+  myRooms: []
 };
