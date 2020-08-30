@@ -34,15 +34,14 @@ var MessagesView = {
 
   initialize: function() {
     $('.submit').on('click', function() {
-      console.log('it got clicked!');
       let obj = {};
       obj.username = App.username;
       obj.roomname = RoomsView.$select.val();
       obj.text = $('#message').val();
       Parse.create(obj);
-      console.log('clicked');
       $('#message').val('');
     });
+
 
 
   },
