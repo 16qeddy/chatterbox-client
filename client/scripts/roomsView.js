@@ -5,12 +5,19 @@ var RoomsView = {
 
   initialize: function() {
     RoomsView.$button.on('click', function() {
-      // Rooms.knownRooms.push($('#message').val());
-      // var $option = $(`<option>${$('#message').val()}</option>`);
-      // RoomsView.$select.append($option);
-      // $('#message').val('');
       RoomsView.renderRoom($('#message').val());
     });
+
+    RoomsView.$select.on('change', function() {
+      $('#chats').empty();
+      console.log(RoomsView.$select.val());
+      Parse.readAll(function(data) {
+        console.log(data, 'this is data!!!!!!!!!!');
+        Messages.saved = [];
+        MessagesView.render(data.results);
+      });
+    });
+
   },
 
   render: function(data) {
@@ -29,13 +36,9 @@ var RoomsView = {
   },
 
   renderRoom: tag => {
-    var $option = $('<option></option>');
-    $option.text(tag);
-    Rooms.knownRooms.push(tag);
-    $('#rooms select').append($option);
-    $('#message').val('');
+    //moved previous functionality to the rooms object.
+    Rooms.add(tag);
   }
-
 };
 
 // click on add room
